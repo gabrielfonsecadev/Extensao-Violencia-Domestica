@@ -1,0 +1,384 @@
+<div class="container py-5" style="margin-top: 76px;">
+  <!-- Header -->
+  <div class="row mb-5">
+    <div class="col-12 text-center">
+      <h1 class="display-4 text-primary mb-3">
+        <i class="fas fa-envelope me-3"></i>
+        Contato
+      </h1>
+      <p class="lead text-muted">
+        Entre em contato conosco ou acesse os canais de ajuda disponíveis
+      </p>
+    </div>
+  </div>
+
+  <!-- Emergência -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="alert alert-danger border-0 shadow-sm">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h4 class="alert-heading mb-2">
+              <i class="fas fa-exclamation-triangle me-2"></i>
+              Em Situação de Emergência?
+            </h4>
+            <p class="mb-0">
+              Se você está em perigo imediato, não hesite em ligar para os números de emergência.
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <a href="tel:190" class="btn btn-light btn-lg me-2" onclick="logEmergencyCall()">
+              <i class="fas fa-phone-alt me-2"></i>190
+            </a>
+            <a href="tel:180" class="btn btn-outline-light btn-lg" onclick="logEmergencyCall()">
+              <i class="fas fa-phone-alt me-2"></i>180
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Formulário de Contato -->
+    <div class="col-lg-8 mb-5">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+          <h3 class="text-primary mb-4">
+            <i class="fas fa-paper-plane me-2"></i>
+            Envie uma Mensagem
+          </h3>
+          <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="nome" class="form-label">Nome *</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="nome" 
+                  name="nome"
+                  [(ngModel)]="formData.nome"
+                  required
+                  #nome="ngModel"
+                  placeholder="Seu nome completo">
+                <div *ngIf="nome.invalid && nome.touched" class="text-danger small mt-1">
+                  Nome é obrigatório
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">E-mail *</label>
+                <input 
+                  type="email" 
+                  class="form-control" 
+                  id="email" 
+                  name="email"
+                  [(ngModel)]="formData.email"
+                  required
+                  email
+                  #email="ngModel"
+                  placeholder="seu@email.com">
+                <div *ngIf="email.invalid && email.touched" class="text-danger small mt-1">
+                  <span *ngIf="email.errors?.['required']">E-mail é obrigatório</span>
+                  <span *ngIf="email.errors?.['email']">E-mail inválido</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input 
+                  type="tel" 
+                  class="form-control" 
+                  id="telefone" 
+                  name="telefone"
+                  [(ngModel)]="formData.telefone"
+                  placeholder="(11) 99999-9999">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="assunto" class="form-label">Assunto *</label>
+                <select 
+                  class="form-select" 
+                  id="assunto" 
+                  name="assunto"
+                  [(ngModel)]="formData.assunto"
+                  required
+                  #assunto="ngModel">
+                  <option value="">Selecione um assunto</option>
+                  <option value="duvida">Dúvida sobre direitos</option>
+                  <option value="informacao">Solicitação de informação</option>
+                  <option value="sugestao">Sugestão</option>
+                  <option value="problema">Problema técnico</option>
+                  <option value="parceria">Parceria/Colaboração</option>
+                  <option value="outro">Outro</option>
+                </select>
+                <div *ngIf="assunto.invalid && assunto.touched" class="text-danger small mt-1">
+                  Assunto é obrigatório
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="mensagem" class="form-label">Mensagem *</label>
+              <textarea 
+                class="form-control" 
+                id="mensagem" 
+                name="mensagem"
+                [(ngModel)]="formData.mensagem"
+                required
+                #mensagem="ngModel"
+                rows="5" 
+                placeholder="Descreva sua mensagem, dúvida ou solicitação..."></textarea>
+              <div *ngIf="mensagem.invalid && mensagem.touched" class="text-danger small mt-1">
+                Mensagem é obrigatória
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input 
+                  class="form-check-input" 
+                  type="checkbox" 
+                  id="privacidade"
+                  name="privacidade"
+                  [(ngModel)]="formData.privacidade"
+                  required
+                  #privacidade="ngModel">
+                <label class="form-check-label" for="privacidade">
+                  Concordo com a <a href="#" data-bs-toggle="modal" data-bs-target="#privacidadeModal">Política de Privacidade</a> *
+                </label>
+                <div *ngIf="privacidade.invalid && privacidade.touched" class="text-danger small mt-1">
+                  É necessário concordar com a política de privacidade
+                </div>
+              </div>
+            </div>
+            <div class="d-grid">
+              <button 
+                type="submit" 
+                class="btn btn-primary btn-lg"
+                [disabled]="contactForm.invalid || isSubmitting">
+                <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm me-2"></span>
+                <i *ngIf="!isSubmitting" class="fas fa-paper-plane me-2"></i>
+                {{ isSubmitting ? 'Enviando...' : 'Enviar Mensagem' }}
+              </button>
+            </div>
+          </form>
+          
+          <!-- Mensagem de Sucesso -->
+          <div *ngIf="showSuccessMessage" class="alert alert-success mt-3">
+            <i class="fas fa-check-circle me-2"></i>
+            Mensagem enviada com sucesso! Entraremos em contato em breve.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Informações de Contato -->
+    <div class="col-lg-4">
+      <!-- Canais de Emergência -->
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body p-4">
+          <h5 class="text-danger mb-3">
+            <i class="fas fa-phone-alt me-2"></i>
+            Emergência
+          </h5>
+          <div class="d-grid gap-2">
+            <a href="tel:190" class="btn btn-outline-danger" onclick="logEmergencyCall()">
+              <i class="fas fa-shield-alt me-2"></i>190 - Polícia Militar
+            </a>
+            <a href="tel:180" class="btn btn-outline-warning" onclick="logEmergencyCall()">
+              <i class="fas fa-female me-2"></i>180 - Central da Mulher
+            </a>
+            <a href="tel:197" class="btn btn-outline-info" onclick="logEmergencyCall()">
+              <i class="fas fa-search me-2"></i>197 - Polícia Civil
+            </a>
+            <a href="tel:100" class="btn btn-outline-success" onclick="logEmergencyCall()">
+              <i class="fas fa-child me-2"></i>100 - Disque Direitos Humanos
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Informações Gerais -->
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body p-4">
+          <h5 class="text-primary mb-3">
+            <i class="fas fa-info-circle me-2"></i>
+            Informações
+          </h5>
+          <div class="mb-3">
+            <h6 class="text-muted mb-1">Horário de Atendimento</h6>
+            <p class="mb-0">24 horas por dia, 7 dias por semana</p>
+            <small class="text-muted">Para emergências</small>
+          </div>
+          <div class="mb-3">
+            <h6 class="text-muted mb-1">Atendimento Online</h6>
+            <p class="mb-0">Respostas em até 24 horas</p>
+            <small class="text-muted">Para dúvidas e informações</small>
+          </div>
+          <div class="mb-3">
+            <h6 class="text-muted mb-1">Confidencialidade</h6>
+            <p class="mb-0">Todas as informações são tratadas com sigilo absoluto</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Redes Sociais -->
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+          <h5 class="text-success mb-3">
+            <i class="fas fa-share-alt me-2"></i>
+            Compartilhe
+          </h5>
+          <p class="text-muted mb-3">Ajude outras mulheres compartilhando informações importantes:</p>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary" onclick="shareOnFacebook()">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+            <button class="btn btn-outline-info" onclick="shareOnTwitter()">
+              <i class="fab fa-twitter"></i>
+            </button>
+            <button class="btn btn-outline-success" onclick="shareOnWhatsApp()">
+              <i class="fab fa-whatsapp"></i>
+            </button>
+            <button class="btn btn-outline-secondary" onclick="copyLink()">
+              <i class="fas fa-link"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recursos Adicionais -->
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="card bg-light border-0">
+        <div class="card-body p-4">
+          <h3 class="text-center mb-4">Outros Recursos de Ajuda</h3>
+          <div class="row g-4">
+            <div class="col-md-3 col-6 text-center">
+              <a routerLink="/sobre-violencia" class="text-decoration-none">
+                <div class="p-3">
+                  <i class="fas fa-info-circle text-primary mb-2" style="font-size: 2rem;"></i>
+                  <h6 class="text-primary">Sobre Violência</h6>
+                  <p class="small text-muted">Entenda os tipos e sinais</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-6 text-center">
+              <a routerLink="/como-denunciar" class="text-decoration-none">
+                <div class="p-3">
+                  <i class="fas fa-exclamation-triangle text-warning mb-2" style="font-size: 2rem;"></i>
+                  <h6 class="text-warning">Como Denunciar</h6>
+                  <p class="small text-muted">Passo a passo para denunciar</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-6 text-center">
+              <a routerLink="/rede-apoio" class="text-decoration-none">
+                <div class="p-3">
+                  <i class="fas fa-users text-success mb-2" style="font-size: 2rem;"></i>
+                  <h6 class="text-success">Rede de Apoio</h6>
+                  <p class="small text-muted">Encontre ajuda próxima</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-6 text-center">
+              <a routerLink="/material-educativo" class="text-decoration-none">
+                <div class="p-3">
+                  <i class="fas fa-book text-info mb-2" style="font-size: 2rem;"></i>
+                  <h6 class="text-info">Material Educativo</h6>
+                  <p class="small text-muted">Guias e informações</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Rápido -->
+  <div class="row mt-5">
+    <div class="col-12">
+      <h3 class="text-center mb-4">Perguntas Frequentes</h3>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="card border-0 bg-light">
+            <div class="card-body p-3">
+              <h6 class="text-primary">Como posso denunciar anonimamente?</h6>
+              <p class="small mb-0">Você pode ligar para o 180 (Central da Mulher) ou 100 (Disque Direitos Humanos) sem se identificar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="card border-0 bg-light">
+            <div class="card-body p-3">
+              <h6 class="text-primary">O atendimento é gratuito?</h6>
+              <p class="small mb-0">Sim, todos os serviços de emergência e apoio são gratuitos e disponíveis 24 horas.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="card border-0 bg-light">
+            <div class="card-body p-3">
+              <h6 class="text-primary">Posso pedir ajuda para uma amiga?</h6>
+              <p class="small mb-0">Sim, você pode denunciar em nome de terceiros e orientar sobre os recursos disponíveis.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="card border-0 bg-light">
+            <div class="card-body p-3">
+              <h6 class="text-primary">Existe atendimento psicológico?</h6>
+              <p class="small mb-0">Sim, há diversos serviços gratuitos de apoio psicológico. Consulte nossa rede de apoio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Política de Privacidade -->
+<div class="modal fade" id="privacidadeModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Política de Privacidade</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Coleta de Informações</h6>
+        <p>Coletamos apenas as informações necessárias para responder às suas solicitações e fornecer suporte adequado.</p>
+        
+        <h6>Uso das Informações</h6>
+        <p>Suas informações são utilizadas exclusivamente para:</p>
+        <ul>
+          <li>Responder às suas dúvidas e solicitações</li>
+          <li>Fornecer informações sobre recursos de apoio</li>
+          <li>Melhorar nossos serviços</li>
+        </ul>
+        
+        <h6>Proteção de Dados</h6>
+        <p>Implementamos medidas de segurança para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+        
+        <h6>Compartilhamento</h6>
+        <p>Não compartilhamos suas informações pessoais com terceiros, exceto quando:</p>
+        <ul>
+          <li>Exigido por lei</li>
+          <li>Necessário para sua segurança imediata</li>
+          <li>Com seu consentimento explícito</li>
+        </ul>
+        
+        <h6>Seus Direitos</h6>
+        <p>Você tem o direito de acessar, corrigir ou excluir suas informações pessoais a qualquer momento.</p>
+        
+        <div class="alert alert-info">
+          <strong>Importante:</strong> Em situações de emergência, podemos ser obrigados a compartilhar informações com autoridades competentes para garantir sua segurança.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendi</button>
+      </div>
+    </div>
+  </div>
+</div>

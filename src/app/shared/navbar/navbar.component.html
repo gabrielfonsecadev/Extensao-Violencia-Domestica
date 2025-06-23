@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <i class="fas fa-shield-heart me-2"></i>
+      Violência Doméstica - Informação e Apoio
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <i class="fas fa-home me-1"></i>Início
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/sobre-violencia" routerLinkActive="active">
+            <i class="fas fa-info-circle me-1"></i>Sobre Violência
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/como-denunciar" routerLinkActive="active">
+            <i class="fas fa-phone me-1"></i>Como Denunciar
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/rede-apoio" routerLinkActive="active">
+            <i class="fas fa-users me-1"></i>Rede de Apoio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/material-educativo" routerLinkActive="active">
+            <i class="fas fa-book me-1"></i>Material Educativo
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contato" routerLinkActive="active">
+            <i class="fas fa-envelope me-1"></i>Contato
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-danger text-white ms-2 px-3" href="tel:180" 
+             onclick="logEmergencyCall()" title="Ligue 180 - Central de Atendimento à Mulher">
+            <i class="fas fa-phone-alt me-1"></i>Emergência 180
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

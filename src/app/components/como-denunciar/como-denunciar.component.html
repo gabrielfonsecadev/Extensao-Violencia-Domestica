@@ -1,0 +1,351 @@
+<div class="container py-5" style="margin-top: 76px;">
+  <!-- Header -->
+  <div class="row mb-5">
+    <div class="col-12 text-center">
+      <h1 class="display-4 text-primary mb-3">
+        <i class="fas fa-phone me-3"></i>
+        Como Denunciar
+      </h1>
+      <p class="lead text-muted">
+        Conheça os canais disponíveis para denunciar violência doméstica
+      </p>
+    </div>
+  </div>
+
+  <!-- Emergência -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="alert alert-danger border-0 shadow-sm">
+        <div class="row align-items-center">
+          <div class="col-md-2 text-center">
+            <i class="fas fa-exclamation-triangle fa-3x"></i>
+          </div>
+          <div class="col-md-8">
+            <h4 class="alert-heading mb-2">Em Situação de Emergência</h4>
+            <p class="mb-0">
+              Se você está em perigo imediato, ligue para os números de emergência. 
+              Sua segurança é a prioridade!
+            </p>
+          </div>
+          <div class="col-md-2 text-center">
+            <a href="tel:190" class="btn btn-danger btn-lg" onclick="logEmergencyCall()">
+              <i class="fas fa-phone-alt me-2"></i>190
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Canais de Denúncia -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <h2 class="text-center mb-4">Canais de Denúncia</h2>
+    </div>
+  </div>
+
+  <div class="row g-4 mb-5">
+    <!-- Central 180 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center p-4">
+          <div class="mb-3">
+            <i class="fas fa-phone-alt text-danger" style="font-size: 3rem;"></i>
+          </div>
+          <h5 class="card-title text-danger">Central 180</h5>
+          <p class="card-text">
+            Central de Atendimento à Mulher em Situação de Violência
+          </p>
+          <div class="text-start mb-3">
+            <strong>Características:</strong>
+            <ul class="mt-2">
+              <li>Atendimento 24 horas</li>
+              <li>Gratuito</li>
+              <li>Sigiloso</li>
+              <li>Multilíngue</li>
+            </ul>
+          </div>
+          <a href="tel:180" class="btn btn-danger" onclick="logEmergencyCall()">
+            <i class="fas fa-phone me-2"></i>Ligar 180
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Polícia Militar -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center p-4">
+          <div class="mb-3">
+            <i class="fas fa-shield-alt text-primary" style="font-size: 3rem;"></i>
+          </div>
+          <h5 class="card-title text-primary">Polícia Militar - 190</h5>
+          <p class="card-text">
+            Para situações de emergência e flagrante
+          </p>
+          <div class="text-start mb-3">
+            <strong>Quando usar:</strong>
+            <ul class="mt-2">
+              <li>Situação de perigo imediato</li>
+              <li>Flagrante de violência</li>
+              <li>Ameaças graves</li>
+              <li>Necessidade de proteção</li>
+            </ul>
+          </div>
+          <a href="tel:190" class="btn btn-primary" onclick="logEmergencyCall()">
+            <i class="fas fa-phone me-2"></i>Ligar 190
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Polícia Civil -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center p-4">
+          <div class="mb-3">
+            <i class="fas fa-balance-scale text-success" style="font-size: 3rem;"></i>
+          </div>
+          <h5 class="card-title text-success">Polícia Civil - 197</h5>
+          <p class="card-text">
+            Para registrar boletim de ocorrência
+          </p>
+          <div class="text-start mb-3">
+            <strong>Serviços:</strong>
+            <ul class="mt-2">
+              <li>Boletim de Ocorrência</li>
+              <li>Investigação</li>
+              <li>Medidas protetivas</li>
+              <li>Acompanhamento do caso</li>
+            </ul>
+          </div>
+          <a href="tel:197" class="btn btn-success" onclick="logEmergencyCall()">
+            <i class="fas fa-phone me-2"></i>Ligar 197
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disque 100 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center p-4">
+          <div class="mb-3">
+            <i class="fas fa-users text-warning" style="font-size: 3rem;"></i>
+          </div>
+          <h5 class="card-title text-warning">Disque 100</h5>
+          <p class="card-text">
+            Disque Direitos Humanos
+          </p>
+          <div class="text-start mb-3">
+            <strong>Atende:</strong>
+            <ul class="mt-2">
+              <li>Violações de direitos humanos</li>
+              <li>Discriminação</li>
+              <li>Violência contra grupos vulneráveis</li>
+              <li>Orientações gerais</li>
+            </ul>
+          </div>
+          <a href="tel:100" class="btn btn-warning" onclick="logEmergencyCall()">
+            <i class="fas fa-phone me-2"></i>Ligar 100
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delegacia da Mulher -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center p-4">
+          <div class="mb-3">
+            <i class="fas fa-building text-info" style="font-size: 3rem;"></i>
+          </div>
+          <h5 class="card-title text-info">Delegacia da Mulher</h5>
+          <p class="card-text">
+            Atendimento especializado presencial
+          </p>
+          <div class="text-start mb-3">
+            <strong>Serviços:</strong>
+            <ul class="mt-2">
+              <li>Atendimento especializado</li>
+              <li>Registro de ocorrência</li>
+              <li>Solicitação de medidas protetivas</li>
+              <li>Acompanhamento psicossocial</li>
+            </ul>
+          </div>
+          <a routerLink="/rede-apoio" class="btn btn-info">
+            <i class="fas fa-map-marker-alt me-2"></i>Localizar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ministério Público -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body text-center p-4">
+          <div class="mb-3">
+            <i class="fas fa-gavel text-secondary" style="font-size: 3rem;"></i>
+          </div>
+          <h5 class="card-title text-secondary">Ministério Público</h5>
+          <p class="card-text">
+            Fiscalização e proteção de direitos
+          </p>
+          <div class="text-start mb-3">
+            <strong>Atuação:</strong>
+            <ul class="mt-2">
+              <li>Fiscalização de medidas protetivas</li>
+              <li>Ação penal</li>
+              <li>Proteção de direitos</li>
+              <li>Orientação jurídica</li>
+            </ul>
+          </div>
+          <a routerLink="/rede-apoio" class="btn btn-secondary">
+            <i class="fas fa-info-circle me-2"></i>Mais Info
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Como Fazer a Denúncia -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+          <h2 class="text-primary mb-4">
+            <i class="fas fa-list-ol me-2"></i>
+            Como Fazer a Denúncia
+          </h2>
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Informações Importantes:</h5>
+              <ul>
+                <li><strong>Dados pessoais:</strong> Nome completo, RG, CPF, endereço</li>
+                <li><strong>Dados do agressor:</strong> Nome, endereço, relação com a vítima</li>
+                <li><strong>Descrição dos fatos:</strong> Data, hora, local, tipo de violência</li>
+                <li><strong>Testemunhas:</strong> Nome e contato de pessoas que presenciaram</li>
+                <li><strong>Provas:</strong> Fotos de lesões, mensagens, áudios</li>
+                <li><strong>Histórico:</strong> Outras ocorrências anteriores</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h5>Documentos Necessários:</h5>
+              <ul>
+                <li>Documento de identidade (RG ou CNH)</li>
+                <li>CPF</li>
+                <li>Comprovante de residência</li>
+                <li>Certidão de nascimento dos filhos (se houver)</li>
+                <li>Documentos do agressor (se possível)</li>
+                <li>Laudos médicos (se houver lesões)</li>
+                <li>Fotos das lesões</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Medidas Protetivas -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+          <h2 class="text-success mb-4">
+            <i class="fas fa-shield-alt me-2"></i>
+            Medidas Protetivas de Urgência
+          </h2>
+          <p class="lead">
+            As medidas protetivas são determinações judiciais que visam proteger a mulher 
+            em situação de violência doméstica.
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Tipos de Medidas:</h5>
+              <ul>
+                <li>Proibição de aproximação</li>
+                <li>Proibição de contato</li>
+                <li>Afastamento do lar</li>
+                <li>Suspensão de visitas aos filhos</li>
+                <li>Prestação de alimentos</li>
+                <li>Restituição de bens</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h5>Como Solicitar:</h5>
+              <ul>
+                <li>Delegacia de Polícia</li>
+                <li>Ministério Público</li>
+                <li>Defensoria Pública</li>
+                <li>Juizado de Violência Doméstica</li>
+                <li>Através de advogado</li>
+              </ul>
+            </div>
+          </div>
+          <div class="alert alert-info mt-3">
+            <i class="fas fa-info-circle me-2"></i>
+            <strong>Importante:</strong> As medidas protetivas podem ser solicitadas mesmo sem advogado 
+            e têm caráter de urgência.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Denúncia Anônima -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="card bg-light border-0 shadow-sm">
+        <div class="card-body p-4">
+          <h2 class="text-primary mb-4">
+            <i class="fas fa-user-secret me-2"></i>
+            Denúncia Anônima
+          </h2>
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <p class="lead mb-3">
+                Você pode fazer denúncias anônimas se souber de casos de violência doméstica.
+              </p>
+              <ul>
+                <li>Ligue 180 - Central de Atendimento à Mulher</li>
+                <li>Disque 100 - Disque Direitos Humanos</li>
+                <li>Site do Ministério Público do seu estado</li>
+                <li>Aplicativos de denúncia online</li>
+              </ul>
+            </div>
+            <div class="col-md-4 text-center">
+              <i class="fas fa-eye-slash" style="font-size: 5rem; opacity: 0.3;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card bg-danger text-white border-0">
+        <div class="card-body text-center p-4">
+          <h3 class="mb-3">Não Hesite em Denunciar</h3>
+          <p class="mb-4">
+            A denúncia é o primeiro passo para interromper o ciclo de violência. 
+            Você tem direito à proteção e ao apoio do Estado.
+          </p>
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <a href="tel:180" class="btn btn-light btn-lg" onclick="logEmergencyCall()">
+              <i class="fas fa-phone-alt me-2"></i>Central 180
+            </a>
+            <a href="tel:190" class="btn btn-outline-light btn-lg" onclick="logEmergencyCall()">
+              <i class="fas fa-shield-alt me-2"></i>Emergência 190
+            </a>
+            <a routerLink="/rede-apoio" class="btn btn-outline-light btn-lg">
+              <i class="fas fa-users me-2"></i>Rede de Apoio
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

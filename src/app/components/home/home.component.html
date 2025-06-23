@@ -1,0 +1,160 @@
+<!-- Hero Section -->
+<section class="hero-section bg-primary text-white py-5" style="margin-top: 76px;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold mb-4">
+          <i class="fas fa-shield-heart me-3"></i>
+          Você não está sozinha
+        </h1>
+        <p class="lead mb-4">
+          Encontre informações, apoio e recursos para combater a violência doméstica. 
+          Estamos aqui para ajudar você a encontrar segurança e reconstruir sua vida.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="tel:180" class="btn btn-danger btn-lg" onclick="logEmergencyCall()">
+            <i class="fas fa-phone-alt me-2"></i>Emergência 180
+          </a>
+          <a routerLink="/como-denunciar" class="btn btn-outline-light btn-lg">
+            <i class="fas fa-info-circle me-2"></i>Como Denunciar
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        <i class="fas fa-hands-helping" style="font-size: 12rem; opacity: 0.3;"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Access Cards -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Acesso Rápido</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 quick-access-card">
+          <div class="card-body text-center p-4">
+            <div class="mb-3">
+              <i class="fas fa-phone-alt text-danger" style="font-size: 3rem;"></i>
+            </div>
+            <h5 class="card-title">Emergência</h5>
+            <p class="card-text">Ligue 180 para atendimento imediato e sigiloso</p>
+            <a href="tel:180" class="btn btn-danger" onclick="logEmergencyCall()">
+              <i class="fas fa-phone me-2"></i>Ligar Agora
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 quick-access-card">
+          <div class="card-body text-center p-4">
+            <div class="mb-3">
+              <i class="fas fa-info-circle text-primary" style="font-size: 3rem;"></i>
+            </div>
+            <h5 class="card-title">Informações</h5>
+            <p class="card-text">Entenda os tipos de violência e como identificá-los</p>
+            <a routerLink="/sobre-violencia" class="btn btn-primary">
+              <i class="fas fa-arrow-right me-2"></i>Saiba Mais
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 quick-access-card">
+          <div class="card-body text-center p-4">
+            <div class="mb-3">
+              <i class="fas fa-users text-success" style="font-size: 3rem;"></i>
+            </div>
+            <h5 class="card-title">Rede de Apoio</h5>
+            <p class="card-text">Encontre organizações e serviços de apoio</p>
+            <a routerLink="/rede-apoio" class="btn btn-success">
+              <i class="fas fa-arrow-right me-2"></i>Ver Rede
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 quick-access-card">
+          <div class="card-body text-center p-4">
+            <div class="mb-3">
+              <i class="fas fa-book text-warning" style="font-size: 3rem;"></i>
+            </div>
+            <h5 class="card-title">Material Educativo</h5>
+            <p class="card-text">Acesse guias, cartilhas e recursos educativos</p>
+            <a routerLink="/material-educativo" class="btn btn-warning">
+              <i class="fas fa-arrow-right me-2"></i>Acessar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-12 mb-4">
+        <h2>Dados sobre Violência Doméstica no Brasil</h2>
+        <p class="text-muted">Estatísticas que mostram a importância do combate à violência doméstica</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3 col-sm-6">
+        <div class="text-center">
+          <div class="display-4 text-danger fw-bold">1</div>
+          <p class="mb-0">mulher é agredida a cada</p>
+          <p class="fw-bold text-danger">4 segundos</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="text-center">
+          <div class="display-4 text-danger fw-bold">80%</div>
+          <p class="mb-0">dos casos ocorrem</p>
+          <p class="fw-bold text-danger">dentro de casa</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="text-center">
+          <div class="display-4 text-danger fw-bold">76%</div>
+          <p class="mb-0">dos agressores são</p>
+          <p class="fw-bold text-danger">parceiros ou ex-parceiros</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="text-center">
+          <div class="display-4 text-success fw-bold">180</div>
+          <p class="mb-0">Central de Atendimento</p>
+          <p class="fw-bold text-success">24h por dia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-danger text-white">
+  <div class="container text-center">
+    <h2 class="mb-4">Precisa de Ajuda Imediata?</h2>
+    <p class="lead mb-4">
+      Se você está em situação de perigo, não hesite em buscar ajuda. 
+      Existem pessoas e organizações prontas para apoiá-la.
+    </p>
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+      <a href="tel:180" class="btn btn-light btn-lg" onclick="logEmergencyCall()">
+        <i class="fas fa-phone-alt me-2"></i>Ligue 180
+      </a>
+      <a href="tel:190" class="btn btn-outline-light btn-lg" onclick="logEmergencyCall()">
+        <i class="fas fa-shield-alt me-2"></i>Polícia 190
+      </a>
+      <a routerLink="/rede-apoio" class="btn btn-outline-light btn-lg">
+        <i class="fas fa-users me-2"></i>Encontrar Apoio
+      </a>
+    </div>
+  </div>
+</section>

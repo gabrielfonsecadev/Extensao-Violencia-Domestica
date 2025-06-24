@@ -21,7 +21,7 @@ Este projeto está configurado para deploy automático no GitHub Pages.
    - O deploy será feito automaticamente a cada push na branch main
 
 3. **Acesse sua aplicação:**
-   - Após o deploy, sua aplicação estará disponível em: `https://[seu-usuario].github.io/extensao-violencia-domestica/`
+   - Após o deploy, sua aplicação estará disponível em: `https://[seu-usuario].github.io/Extensao-Violencia-Domestica/`
 
 ### Deploy Manual
 

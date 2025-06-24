@@ -44,7 +44,7 @@ git push origin main
 ### 3. Acessar a Aplicação
 Após o deploy, sua aplicação estará disponível em:
 ```
-https://[seu-usuario].github.io/extensao-violencia-domestica/
+https://[seu-usuario].github.io/Extensao-Violencia-Domestica/
 ```
 
 ## 🔄 Deploy Manual (Opcional)

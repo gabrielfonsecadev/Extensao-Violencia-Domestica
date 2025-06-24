@@ -35,7 +35,11 @@ git push origin main
 1. Acesse seu repositório no GitHub
 2. Vá para **Settings** > **Pages**
 3. Em **Source**, selecione **"GitHub Actions"**
-4. Aguarde o primeiro deploy (pode levar alguns minutos)
+4. **IMPORTANTE**: Vá para **Settings** > **Actions** > **General**
+5. Em **Workflow permissions**, selecione **"Read and write permissions"**
+6. Marque a opção **"Allow GitHub Actions to create and approve pull requests"**
+7. Clique em **Save**
+8. Aguarde o primeiro deploy (pode levar alguns minutos)
 
 ### 3. Acessar a Aplicação
 Após o deploy, sua aplicação estará disponível em:
@@ -90,6 +94,16 @@ Se você tiver um domínio personalizado:
 
 ## 🐛 Solução de Problemas
 
+### Erro de Permissão (403 Forbidden)
+**Erro:** `Permission denied to github-actions[bot]`
+
+**Solução:**
+1. Vá para **Settings** > **Actions** > **General** no seu repositório
+2. Em **Workflow permissions**, selecione **"Read and write permissions"**
+3. Marque **"Allow GitHub Actions to create and approve pull requests"**
+4. Clique em **Save**
+5. Execute novamente o workflow ou faça um novo push
+
 ### Build Falhando
 - Verifique se todas as dependências estão instaladas: `npm install`
 - Teste o build localmente: `npm run build:gh-pages`
@@ -101,6 +115,11 @@ Se você tiver um domínio personalizado:
 ### 404 Errors
 - Verifique se o arquivo `.nojekyll` está presente
 - Confirme que o roteamento do Angular está configurado corretamente
+
+### Workflow Não Executa
+- Verifique se o arquivo está em `.github/workflows/deploy.yml`
+- Confirme que você está fazendo push na branch `main`
+- Verifique se o GitHub Actions está habilitado no repositório
 
 ## 📊 Monitoramento
 

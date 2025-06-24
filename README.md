@@ -1,6 +1,46 @@
-# AngularApp
+# Extensão Violência Doméstica
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 18.2.1.
+
+## 🚀 Deploy no GitHub Pages
+
+Este projeto está configurado para deploy automático no GitHub Pages.
+
+### Configuração Inicial
+
+1. **Faça push do código para o GitHub:**
+   ```bash
+   git add .
+   git commit -m "Configuração inicial para GitHub Pages"
+   git push origin main
+   ```
+
+2. **Configure o GitHub Pages no repositório:**
+   - Vá para Settings > Pages no seu repositório GitHub
+   - Em "Source", selecione "GitHub Actions"
+   - O deploy será feito automaticamente a cada push na branch main
+
+3. **Acesse sua aplicação:**
+   - Após o deploy, sua aplicação estará disponível em: `https://[seu-usuario].github.io/extensao-violencia-domestica/`
+
+### Deploy Manual
+
+Se preferir fazer deploy manual:
+
+```bash
+# Build e deploy em um comando
+npm run deploy:gh-pages
+
+# Ou separadamente
+npm run build:gh-pages
+npx angular-cli-ghpages --dir=dist/angular-app
+```
+
+### Scripts Disponíveis
+
+- `npm run build:gh-pages` - Build otimizado para GitHub Pages
+- `npm run deploy:gh-pages` - Build e deploy em um comando
+- `npm run build:prod` - Build de produção padrão
 
 ## Development server
 
